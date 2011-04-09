@@ -3,21 +3,39 @@ require 'generators/ahn'
 module Ahn
   module Generators
     class AppGenerator < Base
-      argument :config_name, :type => :string, :default => 'app', :banner => 'config_name'
-
       def generate_app
-        # template "load_config.rb", "config/initializers/load_#{file_name}_config.rb"
-        # copy_file "config.yml", "config/#{file_name}_config.yml"
+        generate_ahn_app
+        place_files_for_rails
+        remove_ahn_tmp
+        place_custom_files
       end
 
       private
 
-      def file_name
-        config_name.underscore
+      def ahn_tmp_dir
+        'tmp/adhearsion'
       end
 
-      def constant_name
-        config_name.underscore.upcase
+      def generate_ahn_app
+        run "ahn create #{ahn_tmp_dir}"
+      end
+
+      def place_files_for_rails
+        run "mv #{ahn_tmp_dir}/components app/components"
+        run "mv #{ahn_tmp_dir}/dialplan.rb app/dialplan.rb"
+        run "mv #{ahn_tmp_dir}/events.rb app/events.rb"
+      end
+
+      def remove_ahn_tmp
+        remove_dir ahn_tmp_dir
+      end
+
+      def place_custom_files
+        gem "adhearsion", ">= 1.0.1"
+        copy_file "adhearsion.rake", "lib/tasks/adhearsion.rake"
+        copy_file "adhearsion.rb", "config/adhearsion.rb"
+        copy_file "adhearsion.yml", "config/adhearsion.example.yml"
+        copy_file "ahnrc", ".ahnrc"
       end
     end
   end

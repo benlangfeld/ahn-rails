@@ -1,0 +1,12 @@
+# Adhearsion Runtime Configuration.
+
+paths:
+
+  # All paths are relative to this file's directory
+  init: config/adhearsion.rb
+
+  dialplan: app/dialplan.rb
+
+  events: app/events.rb
+
+  models: app/models/*.rb

@@ -1,0 +1,19 @@
+gem_components:
+
+
+log_level: debug
+
+automatically_answer_incoming_calls: true
+end_call_on_hangup: true
+end_call_on_error: true
+
+argument_delimiter: "|"
+ami:
+  host: 127.0.0.1
+  username: test
+  password: test
+  events: true
+
+drb: true
+
+rails_env: production

@@ -6,6 +6,7 @@ Feature: Adhearsion Deployment Generator
   Scenario: Generate rails integrated deployment config
     Given a new Rails app
     When I cd to "rails_app"
+    And I have capistrano setup
     And I run `rails g ahn:deployment world_domination -f`
 
     Then the file "config/all.god" should contain exactly:
@@ -90,3 +91,5 @@ Feature: Adhearsion Deployment Generator
       end
 
       """
+    And the file "config/deploy.rb" should contain "god load #{release_path}/config/all.god"
+    And the file "config/deploy.rb" should contain "god restart world_domination-adhearsion"

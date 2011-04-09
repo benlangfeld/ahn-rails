@@ -3,19 +3,6 @@ require 'generators/ahn'
 module Ahn
   module Generators
     class AppGenerator < Base
-      def generate_app
-        generate_ahn_app
-        place_files_for_rails
-        remove_ahn_tmp
-        place_custom_files
-      end
-
-      private
-
-      def ahn_tmp_dir
-        'tmp/adhearsion'
-      end
-
       def generate_ahn_app
         run "ahn create #{ahn_tmp_dir}"
       end
@@ -37,6 +24,13 @@ module Ahn
         copy_file "adhearsion.yml", "config/adhearsion.example.yml"
         copy_file "ahnrc", ".ahnrc"
       end
+
+      private
+
+      def ahn_tmp_dir
+        'tmp/adhearsion'
+      end
+
     end
   end
 end

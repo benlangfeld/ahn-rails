@@ -1,0 +1,5 @@
+Description:
+    The ahn:app generator creates an Adhearsion app that is coupled with your Rails app.
+
+Examples:
+    rails generate ahn:app

@@ -1,5 +1,5 @@
 Description:
-    The ahn:app generator creates an Adhearsion app that is coupled with your Rails app.
+    The ahn:app generator creates an Adhearsion app that is coupled with your Rails app. It places config in the config/ directory, dialplan.rb and events.rb in app/, components in components/, uses YAML for adhearsion config and loads your rails app in adhearsion.
 
 Examples:
     rails generate ahn:app

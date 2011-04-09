@@ -8,8 +8,8 @@ Feature: Adhearsion App Generator
     When I cd to "rails_app"
     And I run `rails g ahn:app -f`
     Then the following directories should exist:
-      | app/components            |
-      | app/components/simon_game |
+      | components            |
+      | components/simon_game |
 
     And the following files should exist:
       | app/dialplan.rb      |

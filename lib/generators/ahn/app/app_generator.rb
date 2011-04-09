@@ -21,7 +21,7 @@ module Ahn
       end
 
       def place_files_for_rails
-        run "mv #{ahn_tmp_dir}/components app/components"
+        run "mv #{ahn_tmp_dir}/components components"
         run "mv #{ahn_tmp_dir}/dialplan.rb app/dialplan.rb"
         run "mv #{ahn_tmp_dir}/events.rb app/events.rb"
       end

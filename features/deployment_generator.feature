@@ -8,7 +8,7 @@ Feature: Adhearsion Deployment Generator
     When I cd to "rails_app"
     And I run `rails g ahn:deployment world_domination -f`
 
-    Then the file "config/adhearsion.god" should contain exactly:
+    Then the file "config/all.god" should contain exactly:
       """
       God::Contacts::Email.defaults do |d|
         d.from_email      = "status@mydomain.com"
@@ -22,6 +22,12 @@ Feature: Adhearsion Deployment Generator
         c.group = "support"
       end
 
+      # load in all god configs
+      God.load File.join(File.dirname(__FILE__), 'god', '*.god')
+
+      """
+    And the file "config/god/adhearsion.god" should contain exactly:
+      """
       @deploy_path = '/home/deploy/application'
       @app_path = File.join @deploy_path, 'current', 'adhearsion'
       @pid_file = File.join @deploy_path, 'shared', 'adhearsion', 'pids', 'adhearsion.pid'

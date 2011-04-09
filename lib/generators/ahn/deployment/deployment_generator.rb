@@ -6,7 +6,8 @@ module Ahn
       argument :project_name, :type => :string, :default => 'my_company', :banner => 'project_name'
 
       def create_god_config
-        template "adhearsion.god", "config/adhearsion.god"
+        template "general.god", "config/all.god"
+        template "adhearsion.god", "config/god/adhearsion.god"
       end
 
     end

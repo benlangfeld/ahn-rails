@@ -1,15 +1,3 @@
-God::Contacts::Email.defaults do |d|
-  d.from_email      = "status@mydomain.com"
-  d.from_name       = "<%= project_name.titleize %> Status Monitor"
-  d.delivery_method = :sendmail
-end
-
-God.contact(:email) do |c|
-  c.name = "me"
-  c.to_email = "me@mydomain.com"
-  c.group = "support"
-end
-
 @deploy_path = '/home/deploy/application'
 @app_path = File.join @deploy_path, 'current', 'adhearsion'
 @pid_file = File.join @deploy_path, 'shared', 'adhearsion', 'pids', 'adhearsion.pid'

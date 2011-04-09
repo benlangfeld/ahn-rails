@@ -1,0 +1,5 @@
+Description:
+    The ahn:deployment generator integrates adhearsion into your rails app's deployment setup. It creates God config files, and if you've setup Capistrano, it includes functionality there to restart adhearsion on deploy.
+
+Examples:
+    rails generate ahn:deployment [org_name]

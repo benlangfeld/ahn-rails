@@ -5,6 +5,8 @@ AHNRails provides neat little generators for your Adhearsion + Rails mashups.
 
 Simply include ahn-rails in your rails Gemfile and run `rails g ahn:app`.
 
+If you wish to generate God config for adhearsion, simply run `rails g ahn:deployment`.
+
 Note on Patches/Pull Requests
 -----------------------------
 

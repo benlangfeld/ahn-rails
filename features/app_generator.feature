@@ -41,7 +41,7 @@ Feature: Adhearsion App Generator
 
         config.enable_drb if values['drb']
 
-        config.enable_rails :path => '..', :env => values['rails_env'].to_sym
+        config.enable_rails :path => '.', :env => values['rails_env'].to_sym
 
       end
 

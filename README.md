@@ -10,6 +10,7 @@ If you wish to generate God config for adhearsion, simply run `rails g ahn:deplo
 Note on Patches/Pull Requests
 -----------------------------
 
+* Check the status of the current build: http://ci.mojolingo.com/monitor
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a future version unintentionally.

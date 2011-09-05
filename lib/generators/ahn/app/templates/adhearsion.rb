@@ -12,9 +12,9 @@ Adhearsion::Configuration.configure do |config|
   end
 
   config.logging :level => values['log_level'].to_sym
-  config.automatically_answer_incoming_calls = values['automatically_answer_incoming_calls'] || true
-  config.end_call_on_hangup = values['end_call_on_hangup'] || true
-  config.end_call_on_error = values['end_call_on_error'] || true
+  config.automatically_answer_incoming_calls = values['automatically_answer_incoming_calls'] if values.has_key?('automatically_answer_incoming_calls')
+  config.end_call_on_hangup = values['end_call_on_hangup'] if values.has_key?('end_call_on_hangup')
+  config.end_call_on_error = values['end_call_on_error'] if values.has_key?('end_call_on_error')
 
   config.enable_asterisk :argument_delimiter => values['argument_delimiter'] || '|'
   config.asterisk.enable_ami values['ami']

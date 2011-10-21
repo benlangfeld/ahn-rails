@@ -17,7 +17,7 @@ Adhearsion::Configuration.configure do |config|
   config.end_call_on_error = values['end_call_on_error'] if values.has_key?('end_call_on_error')
 
   config.enable_asterisk :argument_delimiter => values['argument_delimiter'] || '|'
-  config.asterisk.enable_ami values['ami']
+  config.asterisk.enable_ami values['ami'] if values['ami'].delete('enabled')
 
   config.enable_drb if values['drb']
 
